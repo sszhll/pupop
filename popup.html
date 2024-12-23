@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timer-section">
+            <div class="timer-display">
+                <div id="time">25:00</div>
+                <div class="task-name" id="currentTaskName"></div>
+            </div>
+            <div class="timer-controls">
+                <button id="startBtn" class="control-btn">
+                    <span class="btn-icon">▶</span>
+                </button>
+                <button id="pauseBtn" class="control-btn">
+                    <span class="btn-icon">⏸</span>
+                </button>
+                <button id="resetBtn" class="control-btn">
+                    <span class="btn-icon">↺</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="tasks">任务</button>
+            <button class="tab-btn" data-tab="tags">标签</button>
+            <button class="tab-btn" data-tab="stats">统计</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- 任务面板 -->
+            <div id="tasks" class="tab-panel active">
+                <div class="task-input">
+                    <input type="text" id="taskInput" placeholder="任务名称" class="modern-input">
+                    <input type="number" id="timeInput" placeholder="时长" min="1" value="25" class="modern-input">
+                    <div class="tag-select">
+                        <select id="taskTag" class="modern-input">
+                            <option value="">选择标签</option>
+                        </select>
+                        <button id="newTagBtn" class="icon-btn">+</button>
+                    </div>
+                    <button id="addTaskBtn" class="primary-btn">添加</button>
+                </div>
+                <div class="task-list" id="taskList"></div>
+            </div>
+
+            <!-- 标签面板 -->
+            <div id="tags" class="tab-panel">
+                <div class="tag-management">
+                    <div class="tag-input">
+                        <input type="text" id="tagInput" placeholder="新标签名称" class="modern-input">
+                        <input type="color" id="tagColor" value="#2196F3" class="color-picker">
+                        <button id="addTagBtn" class="primary-btn">添加标签</button>
+                    </div>
+                    <div class="tag-list" id="tagList"></div>
+                </div>
+            </div>
+
+            <!-- 统计面板 -->
+            <div id="stats" class="tab-panel">
+                <div class="stats-container">
+                    <div class="stats-header">
+                        <select id="statsTimeRange" class="modern-input">
+                            <option value="today">今天</option>
+                            <option value="week">本周</option>
+                            <option value="month">本月</option>
+                            <option value="all">全部</option>
+                        </select>
+                    </div>
+                    <div class="stats-content">
+                        <div class="chart-container">
+                            <canvas id="statsChart"></canvas>
+                        </div>
+                        <div class="stats-summary" id="statsSummary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html> 

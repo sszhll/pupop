@@ -1,0 +1,15 @@
+{
+  "name": "google-chrome",
+  "version": "1.0.0",
+  "main": "generate_icons.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "canvas": "^2.11.2"
+  }
+}
